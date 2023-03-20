@@ -16,19 +16,19 @@ const initdb = async () =>
 export const putDb = async (content) => {
   console.log('Updating the database');
 
- // Create a connection to the database database and version we want to use.
+ // Creates a connection to the database database and version we want to use.
  const textEditorDb = await openDB('content', 1);
 
- // Create a new transaction and specify the database and data privileges.
+ // Creates a new transaction and specify the database and data privileges.
  const textContent = textEditorDb.transaction('content', 'readwrite');
 
- // Open up the desired object store.
+ // Opens up the desired object store.
  const store = textContent.objectStore('content');
 
- // Use the .add() method on the store and pass in the content.
+ // Uses the .add() method on the store and pass in the content.
  const request = store.add({ content });
 
- // Get confirmation of the request.
+ // console.logs a confirmation of the request.
  const result = await request;
  console.log('🚀 - content saved to the database', result);
 };
