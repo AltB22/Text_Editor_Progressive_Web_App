@@ -21,7 +21,7 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
       template: './index.html',
-      title: 'Just Another Text Editor',
+      title: 'Just_Another_Text_Editor',
     }),
      // creates custom service worker
       new InjectManifest({
@@ -33,14 +33,14 @@ module.exports = () => {
       new WebpackPwaManifest({
       fingerprints: false,
       inject: true,
-      name: 'Text Editor',
+      name: 'Text_Editor',
       short_name: 'T.E.',
       description: 'Installs Text Editor',
       background_color: '#225ca3',
       theme_color: '#225ca3',
       start_url: '/',
       publicPath: '/',
-      // id: './',
+      id: '/',
       icons: [
         {
           src: path.resolve('src/images/logo.png'),
