@@ -37,7 +37,7 @@ export const putDb = async (content) => {
 export const getDb = async () => {
   console.log('Getting content from database');
   // Creates connection to the database database and version
-  const textEditorDb = await openDB('jate', 1);d
+  const textEditorDb = await openDB('jate', 1);
 
   // Creates a new transaction and specify the database and data privileges.
   const textContent = textEditorDb.transaction('jate', 'readonly');
