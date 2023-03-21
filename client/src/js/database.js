@@ -17,16 +17,16 @@ export const putDb = async (content) => {
   console.log('Updating the database');
 
  // Creates a connection to the database database and version we want to use.
- const textEditorDb = await openDB('content', 1);
+ const textEditorDb = await openDB('jate', 1);
 
  // Creates a new transaction and specify the database and data privileges.
- const textContent = textEditorDb.transaction('content', 'readwrite');
+ const textContent = textEditorDb.transaction('jate', 'readwrite');
 
  // Opens up the desired object store.
- const store = textContent.objectStore('content');
+ const store = textContent.objectStore('jate');
 
  // Uses the .add() method on the store and pass in the content.
- const request = store.add({ content });
+ const request = store.put({ id: 1, value: content });
 
  // console.logs a confirmation of the request.
  const result = await request;
@@ -36,16 +36,16 @@ export const putDb = async (content) => {
 // TODO: Add logic for a method that gets all the content from the database
 export const getDb = async () => {
   console.log('Getting content from database');
-  // Create a connection to the database database and version we want to use.
-  const textEditorDb = await openDB('content', 1);
+  // Creates connection to the database database and version
+  const textEditorDb = await openDB('jate', 1);d
 
-  // Create a new transaction and specify the database and data privileges.
-  const textContent = textEditorDb.transaction('content', 'readonly');
+  // Creates a new transaction and specify the database and data privileges.
+  const textContent = textEditorDb.transaction('jate', 'readonly');
 
-  // Open up the desired object store.
-  const store = textContent.objectStore('content');
+  // Opens up the desired object store.
+  const store = textContent.objectStore('jate');
 
-  // Use the .getAll() method to get all data in the database.
+  // Uses the .getAll() method to get all data in the database.
   const request = store.getAll();
 
   // Get confirmation of the request.

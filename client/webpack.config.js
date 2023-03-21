@@ -9,7 +9,7 @@ const { InjectManifest } = require('workbox-webpack-plugin');
 
 module.exports = () => {
   return {
-    mode: 'production',
+    mode: 'development',
     entry: {
       main: './src/js/index.js',
       install: './src/js/install.js'
@@ -33,9 +33,9 @@ module.exports = () => {
       new WebpackPwaManifest({
       fingerprints: false,
       inject: true,
-      name: 'Contact Cards',
-      short_name: 'Contact',
-      description: 'Never forget your contacts!',
+      name: 'Text Editor',
+      short_name: 'T.E.',
+      description: 'Installs Text Editor',
       background_color: '#225ca3',
       theme_color: '#225ca3',
       start_url: './',
@@ -61,7 +61,7 @@ module.exports = () => {
         {
           test: /\.m?js$/,
           exclude: /(node_modules|bower_components)/,
-
+          
           use: {
             loader: 'babel-loader',
             options: {
