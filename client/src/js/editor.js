@@ -27,11 +27,11 @@ export default class {
     getDb().then((data) => {
       console.info('Loaded data from IndexedDB, injecting into editor');
       this.editor.setValue(data || localData || header);
-      console.log('Line 30');
+      
     });
 
     this.editor.on('change', () => {
-      console.log('hello')
+    
       localStorage.setItem('content', this.editor.getValue());
     });
 
