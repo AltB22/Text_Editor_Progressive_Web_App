@@ -18,6 +18,7 @@ module.exports = () => {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
     },
+     //creates new HTML webpack plugin
     plugins: [
       new HtmlWebpackPlugin({
       template: './index.html',
@@ -53,7 +54,7 @@ module.exports = () => {
 
     module: {
       rules: [
-        //TODO: Need to add rules here
+        // Rules added below
         {
           test: /\.css$/i,
           use: ['style-loader', 'css-loader'],
