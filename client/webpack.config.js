@@ -21,7 +21,7 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
       template: './index.html',
-      title: 'Just_Another_Text_Editor',
+      title: 'jate',
     }),
      // creates custom service worker
       new InjectManifest({
@@ -33,14 +33,13 @@ module.exports = () => {
       new WebpackPwaManifest({
       fingerprints: false,
       inject: true,
-      name: 'Text_Editor',
-      short_name: 'T.E.',
+      name: 'Text Editor',
+      short_name: 'JATE',
       description: 'Installs Text Editor',
       background_color: '#225ca3',
       theme_color: '#225ca3',
       start_url: '/',
       publicPath: '/',
-      id: '/',
       icons: [
         {
           src: path.resolve('src/images/logo.png'),
@@ -61,7 +60,7 @@ module.exports = () => {
         },
         {
           test: /\.m?js$/,
-          exclude: /(node_modules|bower_components)/,
+          exclude: /node_modules/,
           
           use: {
             loader: 'babel-loader',

@@ -19,9 +19,12 @@ const loadSpinner = () => {
 
 const editor = new Editor();
 
+
 if (typeof editor === 'undefined') {
+
   loadSpinner();
 }
+
 
 // Check if service workers are supported
 if ('serviceWorker' in navigator) {
